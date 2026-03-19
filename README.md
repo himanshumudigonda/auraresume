@@ -1,6 +1,8 @@
 <div align="center">
   <h1>✨ AuraResume ✨</h1>
   <p><strong>Your dream job starts with an extraordinary resume.</strong></p>
+
+  <h3><a href="https://resumeaura.netlify.app/">🚀 View Live Demo Here</a></h3>
   
   <p>
     <a href="#features">Features</a> • 
