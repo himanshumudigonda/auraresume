@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraResume - AI-Powered Resume Builder & Interview Intel</title>
+    <meta name="description" content="AuraResume analyzes job descriptions and generates highly optimized, ATS-friendly resumes and tailored interview prep intelligence in seconds.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Section 1 — NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">AURA<span class="gold-text">RESUME</span></div>
+        <div class="nav-links">
+            <a href="#how-it-works">How it works</a>
+            <button class="btn-primary" onclick="document.getElementById('builder').scrollIntoView({behavior: 'smooth'})">Build My Resume</button>
+        </div>
+    </nav>
+
+    <!-- Section 2 — HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <p class="eyebrow">AI-POWERED CAREER TOOL</p>
+            <h1 class="hero-title">Your dream job starts with an <br><i>extraordinary resume.</i></h1>
+            <p class="hero-subtext">Tell us the company and role. Our AI researches everything and writes a resume that impresses.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.getElementById('builder').scrollIntoView({behavior: 'smooth'})">Build My Resume Free →</button>
+                <button class="btn-secondary" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">See How It Works</button>
+            </div>
+            <div class="stats-row">
+                <div class="stat"><span class="stat-number">94%</span><span class="stat-label">Average ATS Score</span></div>
+                <div class="stat"><span class="stat-number">3×</span><span class="stat-label">More Callbacks</span></div>
+                <div class="stat"><span class="stat-number">2min</span><span class="stat-label">Time to Generate</span></div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="mock-resume-card float-anim">
+                <div class="skeleton-header"></div>
+                <div class="skeleton-body">
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                </div>
+                <div class="badge badge-green float-anim-delayed">ATS 94</div>
+                <div class="badge badge-red float-anim-delayed-2">AI TAILORED</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 — HOW IT WORKS -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="section-header">
+            <p class="eyebrow">Process</p>
+            <h2 class="section-title">From idea to interview in 4 steps</h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon">🏢</div>
+                <h3 class="step-title">Step 01 — Tell Us the Role</h3>
+                <p class="step-desc">Enter company name, paste job description</p>
+                <span class="step-tag">30 SECONDS</span>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">🔍</div>
+                <h3 class="step-title">Step 02 — AI Deep Research</h3>
+                <p class="step-desc">AI searches web — culture, stack, ATS keywords</p>
+                <span class="step-tag">gpt-oss-120b</span>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">✍️</div>
+                <h3 class="step-title">Step 03 — Resume Generated</h3>
+                <p class="step-desc">Answer a few questions, AI writes every line</p>
+                <span class="step-tag">TAILORED TO YOU</span>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">🚀</div>
+                <h3 class="step-title">Step 04 — Download & Win</h3>
+                <p class="step-desc">PDF or Word + interview prep included</p>
+                <span class="step-tag">PDF + DOCX</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4 — BUILDER -->
+    <section id="builder" class="builder">
+        <div class="builder-grid">
+            <!-- LEFT PANEL — Input Form -->
+            <div class="panel input-panel">
+                <div class="panel-header">
+                    <div class="mac-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <h3 class="panel-title">STEP 1 — JOB DETAILS</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-row two-col">
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" id="company" placeholder="e.g. Google" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Job Title</label>
+                            <input type="text" id="jobTitle" placeholder="e.g. Senior SWE" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Job Description</label>
+                        <textarea id="jobDescription" rows="5" placeholder="Paste the full job description here..." required></textarea>
+                    </div>
+
+                    <hr class="divider">
+                    <h3 class="panel-subtitle">STEP 2 — YOUR DETAILS</h3>
+
+                    <div class="form-row two-col">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" placeholder="e.g. Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Years of Experience</label>
+                            <input type="text" id="experience" placeholder="e.g. 5 years" required>
+                        </div>
+                    </div>
+                    <div class="form-row two-col">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" placeholder="e.g. jane@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" id="phone" placeholder="e.g. +1 234 567 8900" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Skills</label>
+                        <div class="tags-input-container" id="skillsContainer">
+                            <input type="text" id="skillsInput" placeholder="Type a skill and press Enter">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Degree & University</label>
+                        <input type="text" id="degree" placeholder="e.g. B.Tech CSE — IIT Bombay" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Biggest Work Achievement</label>
+                        <textarea id="achievement" rows="3" placeholder="e.g. Reduced API latency by 60% saving $200K/year" required></textarea>
+                    </div>
+                    <div class="form-row two-col">
+                        <div class="form-group">
+                            <label>LinkedIn URL (Optional)</label>
+                            <input type="url" id="linkedin" placeholder="https://linkedin.com/in/...">
+                        </div>
+                        <div class="form-group">
+                            <label>GitHub/Portfolio URL (Optional)</label>
+                            <input type="url" id="github" placeholder="https://github.com/...">
+                        </div>
+                    </div>
+                    
+                    <button class="btn-large btn-dark" onclick="analyzeJob()">✦ Analyse & Generate My Resume</button>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL — AI Research Panel -->
+            <div class="panel research-panel" id="researchPanel">
+                <div class="empty-state" id="researchEmpty">
+                    <p>Your AI insights will appear here</p>
+                </div>
+                <div class="loading-state hidden" id="researchLoading">
+                    <div class="pulsing-dots">
+                        <div class="pulse-dot"></div>
+                        <div class="pulse-dot delay-1"></div>
+                        <div class="pulse-dot delay-2"></div>
+                    </div>
+                    <p id="loadingText">AI is researching...</p>
+                </div>
+                <div class="loaded-state hidden" id="researchLoaded">
+                    <div class="company-info-row">
+                        <div class="company-initial" id="companyInitial">G</div>
+                        <div class="company-meta">
+                            <h4 id="companyNameFound">Google</h4>
+                            <p id="companyDetails">100k+ employees • Tech</p>
+                        </div>
+                    </div>
+                    <div class="score-row">
+                        <div class="score-box score-green">
+                            <span class="score-value" id="matchScore">--</span>
+                            <span class="score-label">Match Score</span>
+                        </div>
+                        <div class="score-box score-gold">
+                            <span class="score-value" id="atsScore">--</span>
+                            <span class="score-label">ATS Score</span>
+                        </div>
+                        <div class="score-box score-rust">
+                            <span class="score-value" id="keywordsHit">--</span>
+                            <span class="score-label">Keywords Hit</span>
+                        </div>
+                    </div>
+                    <div class="keywords-section">
+                        <h4>Critical Keywords Found</h4>
+                        <div class="keyword-chips" id="keywordChips">
+                            <!-- Populated by JS -->
+                        </div>
+                        <div class="keyword-legend">
+                            <span class="legend-item"><span class="legend-color legend-red"></span> Must Have</span>
+                            <span class="legend-item"><span class="legend-color legend-green"></span> Important</span>
+                            <span class="legend-item"><span class="legend-color legend-gold"></span> Bonus</span>
+                        </div>
+                    </div>
+                    <div class="values-section">
+                        <h4>What this company values:</h4>
+                        <ul id="companyValuesList">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </div>
+                    <button class="btn-large btn-gold" onclick="generateResume()">✦ Generate My Winning Resume</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5 — RESULT (Hidden by default) -->
+    <section id="result" class="result hidden">
+        <div class="result-grid">
+            <!-- LEFT — Generated Resume -->
+            <div class="rendered-resume" id="renderedResume">
+                <div class="resume-header">
+                    <h1 id="resName">Jane Doe</h1>
+                    <h2 id="resRole">SENIOR SOFTWARE ENGINEER</h2>
+                    <hr class="resume-divider">
+                    <div class="contact-info" id="resContact">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+                <div class="resume-body">
+                    <div class="resume-main">
+                        <div class="resume-section">
+                            <h3 class="resume-section-title">PROFESSIONAL SUMMARY</h3>
+                            <p id="resSummary" class="resume-text">...</p>
+                        </div>
+                        <div class="resume-section">
+                            <h3 class="resume-section-title">EXPERIENCE</h3>
+                            <div id="resExperience">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                        <div class="resume-section">
+                            <h3 class="resume-section-title">TECHNICAL SKILLS</h3>
+                            <div class="res-skills" id="resSkills">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume-sidebar">
+                        <div class="resume-section">
+                            <h3 class="resume-section-title">EDUCATION</h3>
+                            <p id="resEducation" class="resume-text">...</p>
+                        </div>
+                        <div class="resume-section" id="resCertsContainer" style="display:none;">
+                            <h3 class="resume-section-title">CERTIFICATIONS</h3>
+                            <ul id="resCertifications" class="resume-list">
+                                <!-- Populated by JS -->
+                            </ul>
+                        </div>
+                        <div class="resume-section">
+                            <h3 class="resume-section-title">LINKS</h3>
+                            <ul id="resLinks" class="resume-links">
+                                <!-- Populated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT — Download + ATS Panel -->
+            <div class="download-panel">
+                <div class="ats-card">
+                    <div class="ats-gauge" id="atsGauge">
+                        <span id="finalAtsScore">95</span>
+                    </div>
+                    <h4 class="ats-label">ATS COMPATIBILITY</h4>
+                    <ul class="ats-checklist">
+                        <li>✅ Keyword Optimization</li>
+                        <li>✅ Format Parsability</li>
+                        <li>✅ Section Headers</li>
+                    </ul>
+                </div>
+                <button class="btn-primary btn-full" id="btnDownloadPDF" onclick="downloadPDF()">⬇️ Download PDF — Best for applying</button>
+                <button class="btn-secondary btn-full" id="btnDownloadWord" onclick="downloadWord()">⬇️ Download Word (.docx) — Editable</button>
+                <div class="pro-tip">
+                    <strong>Pro Tip:</strong> Always review the generated resume and tweak bullet points to match your specific voice.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6 — INTERVIEW INTEL -->
+    <section id="interview-intel" class="interview-intel hidden">
+        <div class="section-header">
+            <p class="eyebrow">Interview Intelligence</p>
+            <h2 class="section-title">Walk into <span id="intelCompanyName">the company</span> fully prepared.</h2>
+            <p class="section-subtext">AI-generated insights based on recent interview data and company culture traits.</p>
+        </div>
+        <div class="intel-grid">
+            <div class="intel-card">
+                <div class="intel-card-header header-gold">
+                    <span class="icon">🏢</span> Company Culture
+                </div>
+                <ul class="intel-list" id="intelCulture">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+            <div class="intel-card">
+                <div class="intel-card-header header-sage">
+                    <span class="icon">🎯</span> Interview Tips
+                </div>
+                <ul class="intel-list" id="intelTips">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+            <div class="intel-card">
+                <div class="intel-card-header header-rust">
+                    <span class="icon">💰</span> Salary Intelligence
+                </div>
+                <div class="salary-range" id="intelSalaryRange">₹0 - ₹0</div>
+                <ul class="intel-list" id="intelSalaryNotes">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+        </div>
+        <div class="questions-card">
+            <h3 class="questions-title">Most Likely Interview Questions</h3>
+            <div class="questions-grid" id="intelQuestions">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7 — FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">AURA<span class="gold-text">RESUME</span></div>
+                <p class="footer-desc">AI-powered career tooling to help you land your dream job.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="#builder">Builder</a>
+                <a href="#how-it-works">How It Works</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">ATS Guide</a>
+                <a href="#">Interview Tips</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AuraResume. All rights reserved.</p>
+            <div class="powered-by">Powered by NVIDIA NIM</div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <div class="loading-steps" id="loadingSteps">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
